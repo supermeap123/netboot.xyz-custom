@@ -1,12 +1,24 @@
 #!ipxe
 ###
-### netboot.xyz-custom menu
+### supermeap123's stupid menu
 ###
 
-:start
-echo Hello world!
-sleep 10
+:custom
+clear custom_choice
+menu This is a Local Test Menu
+item --gap This is the custom stuff
+item option_one ${space} Puppy Linux (localtest)
+choose custom_choice || goto custom_exit
+echo ${cls}
+goto ${custom_choice}
 goto custom_exit
 
+:option_one
+kernel http://192.168.1.170:8887/vmlinuz
+initrd http://192.168.1.170:8887/initrd.gz
+imgargs vmlinuz #put_kernel_img_args_here
+boot || goto custom_exit
+
 :custom_exit
-exit 0
+chain utils.ipxe
+exit
