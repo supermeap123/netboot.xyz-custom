@@ -19,7 +19,7 @@ chain http://slax.org/ipxe/?arch=64bit
 
 :option_two
 kernel https://boot.netboot.xyz/memdisk raw iso
-initrd http://distro.ibiblio.org/puppylinux/puppy-xenial/64/xenialpup64-7.5-uefi.iso
+initrd http://ftp.linux.cz/pub/linux/slax/Slax-9.x/slax-64bit-9.5.0.iso
 boot || goto custom_exit
 
 :custom_exit
