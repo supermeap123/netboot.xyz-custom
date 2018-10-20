@@ -7,7 +7,7 @@
 clear custom_choice
 menu This is a Test Menu
 item --gap This is the first sub menu
-item option_one ${space} Loading a kernel and initrd
+item option_one ${space} Puppy Linux (localtest)
 item option_two ${space} Loading an ISO
 item --gap This is a second sub menu
 item option_three ${space} Loads another custom sub menu
@@ -18,9 +18,9 @@ goto ${custom_choice}
 goto custom_exit
 
 :option_one
-kernel http://path.to/vmlinuz
-initrd http://path.to/initrd
-imgargs vmlinuz put_kernel_img_args_here
+kernel http://192.168.1.170:8887/vmlinuz
+initrd http://192.168.1.170:8887/initrd.gz
+imgargs vmlinuz #put_kernel_img_args_here
 boot || goto custom_exit
 
 :option_two
